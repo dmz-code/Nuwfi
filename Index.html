@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuwfi</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="manifest" href="manifest.json" />
+
+</head>
+<body>
+  <canvas id="networkCanvas"></canvas>
+
+  <h1>Nuwfi</h1>
+  <div class="pulse" title="Active signal"></div>
+
+  <section style="position: relative; z-index: 1; margin-top: 30px;">
+    <h2 style="color: #00fff7;">Register your interest</h2>
+    <form action="save.php" method="POST" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <input type="text" name="name" placeholder="Name" required style="padding: 10px; width: 250px;">
+      <input type="email" name="email" placeholder="Email" required style="padding: 10px; width: 250px;">
+      <button type="submit" style="padding: 10px 20px; background-color: #00fff7; border: none; color: black; cursor: pointer;">Submit</button>
+    </form>
+  </section>
+  
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(reg => console.log("✅ Service Worker registered"))
+      .catch(err => console.error("❌ Service Worker failed", err));
+  }
+</script>
+</body>
+</html>
